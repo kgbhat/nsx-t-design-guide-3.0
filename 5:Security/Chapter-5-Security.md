@@ -1230,8 +1230,9 @@ the result of the AV/AM scan. This allows for an automated immediate
 quarantine policy based ont eh result of the AV/AM scan with the
 definition of DFW security rules based ont eh partner tags.
 
-![Graphical user interface, application Description automatically
-generated](images/Figure5-17.png)
+
+![Table Description automatically
+    generated](images/Figure5-17.png)
 <p align="center">
 Figure 5‑17: Endpoint Protection
 </p>
@@ -1239,8 +1240,8 @@ Figure 5‑17: Endpoint Protection
 The Endpoint Protection platform for NSX-T following a simple 3 step
 process to use.
 
-![A picture containing graphical user interface Description
-automatically generated](images/Figure5-18.png)
+![Table Description automatically
+    generated](images/Figure5-18.png)
 <p align="center">
 Figure 5‑18: Endpoint Protection Steps
 </p>
@@ -1408,7 +1409,7 @@ Here are the suggested steps:
     generated](images/Figure5-20.jpg)
 
 <p align="center">
-Figure 5-20: NSX-T Groups Example*
+Figure 5-20: NSX-T Groups Example
 </p>
 
   2.  Define policy for common services; like DNS, NTP as in the figure
@@ -1434,7 +1435,7 @@ Figure 5-20: NSX-T Groups Example*
 ![Table Description automatically
  generated](images/Figure5-21.jpg)
 <p align="center">
-Figure 5-21: Common Services Policy Example*
+Figure 5-21: Common Services Policy Example
 </p>
 
 **Phase-2: Define Segmentation around ZONES - by having an explicit
@@ -1479,7 +1480,7 @@ Figure 5‑22: Policies Between Zones* *Example*
 ![Table Description automatically
     generated](images/Figure5-23.jpg)
 <p align="center">
-Figure 5‑23: Policy Example*
+Figure 5‑23: Policy Example
 </p>
 
 **Phase-3: Define Segmentation around every Application, one at a
@@ -1516,7 +1517,7 @@ segmentation around application by following steps:
 ![Table Description automatically
     generated](images/Figure5-24.jpg)
 <p align="center">
-Figure 5‑24: Segmentation Example*
+Figure 5‑24: Segmentation Example
 </p>
 
   2.  Create a GROUP, say "ZONE-DEV-APP-1" with criteria to match on tag
@@ -1525,7 +1526,7 @@ Figure 5‑24: Segmentation Example*
 ![Table Description automatically
     generated](images/Figure5-25.jpg)
 <p align="center">
-Figure 5‑25: Group Example*
+Figure 5‑25: Group Example
 </p>
 
   3.  Define a policy under Application category with 3 rules as in the
@@ -1549,10 +1550,11 @@ Figure 5‑25: Group Example*
         VM's. Enable log for compliance and monitoring any unauthorized
         communication.
 
-![Graphical user interface, application Description automatically
-generated](images/Figure5-26.jpg)
+
+![Table Description automatically
+            generated](images/Figure5-26.png)
 <p align="center">
-Figure 5‑26: Application Policy Example*
+Figure 5‑26: Application Policy Example
 </p>
 
 **Phase-4: Review Logs for Application Profile.**
@@ -1604,21 +1606,22 @@ This policy is defined in Emergency Category as shown:
   1.  First two rules quarantine all traffic from workloads belonging to
     group GRP-QUARANTINE.
 
-      a.  "GRP-QUARANTINE" is a group which matches all VM with tag equal
+        a.  "GRP-QUARANTINE" is a group which matches all VM with tag equal
         to "QUARANTINE". (If guest introspection is implemented, the
         AV/AM tags can be used to define different quarantine levels.)
 
-      b.  In order to enforce this policy to vulnerable VM's, add tag
+        b.  In order to enforce this policy to vulnerable VM's, add tag
         "QUARANTINE" to isolate the VM's and allow only admin to access
         the hosts to fix the vulnerability.
 
   2.  Other two rule uses Group with known bad IP's to stop any
     communication with those IP's.
 
+
 ![Table Description automatically
-    generated](images/Figure5-27.jpg)
+        generated](images/Figure5-27.png)
 <p align="center">
-Figure 5‑27: Emergency Category Example*
+Figure 5‑27: Emergency Category Example
 </p>
 
 In creating these policies, the iterative addition of rules to the
@@ -1669,12 +1672,12 @@ different security controls.
 
   **1- NSX Managed Workloads with standard VLAN based networking.**
 
-    -   NSX Distributed Firewall can be used to protect NSX managed VM\'s,
+    -   NSX Distributed Firewall can be used to protect NSX managed VM's,
     Containers & Physical Server workloads.
 
   **2- NSX Managed Workloads with NSX Overlay for networking:**
 
-    -   NSX Distributed Firewall can be used to protect NSX managed VM\'s,
+    -   NSX Distributed Firewall can be used to protect NSX managed VM's,
     Containers & Physical Server workloads.
 
   **3- Non-NSX Managed workloads on traditional VLAN based network.**
