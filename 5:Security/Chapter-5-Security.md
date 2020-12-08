@@ -97,6 +97,7 @@ generated](images/Figure5-1.png)
 <p align="center">
 Figure 5‑1: Example of Micro-segmentation with NSX
 </p>
+
 Micro-segmentation provided by NSX-T is an essential element of zero
 trust, specifically it embodies "making the *access control enforcement
 as granular as possible*." (NIST ZTA publication). It establishes a
@@ -135,6 +136,7 @@ generated](images/Figure5-2.png)
 <p align="center">
 Figure 5‑2: NSX-T DFW Architecture and Components
 </p>
+
 ### 5.2.1 Management Plane
 
 The NSX-T management plane is implemented through NSX-T Managers. NSX-T
@@ -224,6 +226,7 @@ generated](images/Figure5-3.png)
 <p align="center">
 Figure 5‑3: NSX-T DFW Data Plane Components on an ESXi Host
 </p>
+
 ### 5.3.2 KVM Hosts- Data Plane Components
 
 NSX-T uses OVS and its utilities on KVM to provide DFW functionality,
@@ -248,6 +251,7 @@ generated](images/Figure5-4.png)
 <p align="center">
 Figure 5‑4: NSX-T DFW Data Plane Components on KVM
 </p>
+
 ### 5.3.3 NSX-T DFW Policy Lookup and Packet Flow
 
 In the data path, the DFW maintains two tables: a rule table and a
@@ -287,22 +291,23 @@ generated](images/Figure5-5.png)
 <p align="center">
 Figure 5‑5: NSX-T DFW Policy Lookup
 </p>
+
 In the example shown above,
 
-7.  WEB VM initiates a session to APP VM by sending TCP SYN packet.
+  1.  WEB VM initiates a session to APP VM by sending TCP SYN packet.
 
-8.  The TCP SYN packets hit the DFW on vNIC and does a Flow Table lookup
+  2.  The TCP SYN packets hit the DFW on vNIC and does a Flow Table lookup
     first, to see if any state matches the existing Flow. Given it\'s
     the first packet of the new session, lookup results in "Flow state
     not found".
 
-9.  Since the Flow Table missed, the DFW does a Rule Table lookup in
+  3.  Since the Flow Table missed, the DFW does a Rule Table lookup in
     top-down order for 5-Tuple match.
 
-10. Flow Matches FW rule 2, which is Allow so the packet is sent out to
+  4. Flow Matches FW rule 2, which is Allow so the packet is sent out to
     the destination.
 
-11. In addition, the Flow table is updated with New Flow State for
+  5. In addition, the Flow table is updated with New Flow State for
     permitted flow as \"Flow 2".
 
 Subsequent packets in this TCP session checked against this flow in the
@@ -314,13 +319,13 @@ information is removed from the flow table.
 Planning, designing, and implementing NSX-T security policy is a
 three-step process:
 
--   Policy Methodology -- Decide on the policy approach -
+-   **Policy Methodology** -- Decide on the policy approach -
     application-centric, infrastructure-centric, or network-centric
 
--   Policy Rule Model -- Select grouping and management strategy for
+-   **Policy Rule Model** -- Select grouping and management strategy for
     policy rules by the NSX-T DFW policy categories and sections.
 
--   Policy Consumption -- Implement the policy rules using the
+-   **Policy Consumption** -- Implement the policy rules using the
     abstraction through grouping constructs and options provided by
     NSX-T.
 
@@ -598,6 +603,7 @@ generated](images/Figure5-8.png)
 <p align="center">
 Figure 5‑8: Group and Nested Group Example
 </p>
+
 **Efficient Grouping Considerations**
 
 Calculation of groups adds a processing load to the NSX-T management and
@@ -717,33 +723,33 @@ Table 5‑4: Firewall Rule Table -- "Action" Values
 **Advanced Settings: Following settings are under advanced settings
 options:**
 
-> **Logging:** Enable or disable packet logging. When enabled, each DFW
-> enabled host will send DFW packet logs in a syslog file called
-> "dfwpktlog.log" to the configured syslog server. This information from
-> the default rule will provide insight to traffic not currently being
-> caught by existing policy. Best practice for deploying east-west
-> traffic in a brownfield environment is to define policy with a default
-> allow rule with logging. This allows for the verification of traffic
-> not currently caught by policy.
->
-> **Direction:** This field matches the direction of the packet, default
-> both In-Out. It can be set to match packet exiting the VM , entering
-> the VM , or both directions.
->
-> **IP Protocol:** By default, both IPv4 & IPv6 protocols. Option to
-> choose IPv4 or IPv6.
->
-> **Log Label:** You can Label the rule; this will be sent as part of
-> DFW packet log when traffic hits this rule**.**
->
-> **Notes:** This field can be used for any free-flowing string and is
-> useful to store comments. Best practice is to use this field for
-> change control by pointing to a ticket ID.
->
-> **Stats:** Provides packets/bytes/sessions statistics along with
-> popularity index associated with that rule entry. They also provide
-> Popularity Index for the given rule. Stats per rule are Polled and
-> aggregated every 15 minutes from all the transport nodes.
+ **Logging:** Enable or disable packet logging. When enabled, each DFW
+ enabled host will send DFW packet logs in a syslog file called
+ "dfwpktlog.log" to the configured syslog server. This information from
+ the default rule will provide insight to traffic not currently being
+ caught by existing policy. Best practice for deploying east-west
+ traffic in a brownfield environment is to define policy with a default
+ allow rule with logging. This allows for the verification of traffic
+ not currently caught by policy.
+
+ **Direction:** This field matches the direction of the packet, default
+ both In-Out. It can be set to match packet exiting the VM , entering
+ the VM , or both directions.
+
+ **IP Protocol:** By default, both IPv4 & IPv6 protocols. Option to
+ choose IPv4 or IPv6.
+
+ **Log Label:** You can Label the rule; this will be sent as part of
+ DFW packet log when traffic hits this rule**.**
+
+ **Notes:** This field can be used for any free-flowing string and is
+ useful to store comments. Best practice is to use this field for
+ change control by pointing to a ticket ID.
+
+ **Stats:** Provides packets/bytes/sessions statistics along with
+ popularity index associated with that rule entry. They also provide
+ Popularity Index for the given rule. Stats per rule are Polled and
+ aggregated every 15 minutes from all the transport nodes.
 
 #### Examples of Policy Rules for 3-Tier Application
 
@@ -1006,6 +1012,7 @@ generated](images/Figure5-10.png)
 <p align="center">
 Figure 5‑10: NSX-T DFW Logical topology -- VLAN Backed Workloads
 </p>
+
 ![Timeline Description automatically
 generated](images/Figure5-11.png)
 <p align="center">
@@ -1166,7 +1173,7 @@ generated](images/Figure5-15.png)
 <p align="center">
 Figure 5‑15: Tier-1 Gateway Firewall - Inter-tenant
 </p>
-####
+
 
 #### Gateway Firewall with NGFW Service Insertion -- As perimeter or Inter Tenant Service
 
@@ -1224,8 +1231,7 @@ quarantine policy based ont eh result of the AV/AM scan with the
 definition of DFW security rules based ont eh partner tags.
 
 ![Graphical user interface, application Description automatically
-generated](images/Figure5-17.png){width="5.15625in"
-height="4.005819116360455in"}
+generated](images/Figure5-17.png)
 <p align="center">
 Figure 5‑17: Endpoint Protection
 </p>
@@ -1342,30 +1348,30 @@ Figure 5-19: Data Center Topology Example*
 
 The data center has following characteristics:
 
-1)  Application deployment is split into two zones - production &
+  1)  Application deployment is split into two zones - production &
     development
 
-2)  Multiple applications hosted in both DEV and PROD ZONE
+  2)  Multiple applications hosted in both DEV and PROD ZONE
 
-3)  All application access same set of common services such as AD, DNS
+  3)  All application access same set of common services such as AD, DNS
     and NTP
 
 The data center network has following characteristics:
 
-1)  The Zones have been assigned with dedicated IP CIDR block.
+  1)  The Zones have been assigned with dedicated IP CIDR block.
 
-    a.  Development zone has 10.1.16.0/20 and 10.1.32.0/20 IP CIDR block
+      a.  Development zone has 10.1.16.0/20 and 10.1.32.0/20 IP CIDR block
         assigned
 
-    b.  Production zone has 10.2.16.0/20 and 10.2.32.0/20 IP CIDR block
+      b.  Production zone has 10.2.16.0/20 and 10.2.32.0/20 IP CIDR block
         assigned.
 
-    c.  Infrastructure Services have 10.3.16.0/24 subnet assigned.
+      c.  Infrastructure Services have 10.3.16.0/24 subnet assigned.
 
-2)  The application within the ZONE would be given IP subnets within
+  2)  The application within the ZONE would be given IP subnets within
     that ZONE specific CIDR block.
 
-3)  In most cases application VM's belonging to same application share
+  3)  In most cases application VM's belonging to same application share
     same L2 segments. In some cases, they have separate L2 segments,
     especially for Database's. (In brownfield environments where L2
     segments may be mixed populations of workloads, one can easily
@@ -1373,19 +1379,19 @@ The data center network has following characteristics:
 
 The data center security has following Requirements:
 
-1)  All applications need to be allowed communicate with common
+  1)  All applications need to be allowed communicate with common
     Infrastructure services.
 
-2)  Between the ZONE - Workloads should not be allowed to communicate
+  2)  Between the ZONE - Workloads should not be allowed to communicate
     with each other.
 
-3)  Within the ZONE - Applications VM's belonging to a certain
+  3)  Within the ZONE - Applications VM's belonging to a certain
     application should not be talking to other application VM's.
 
-4)  Some application within a ZONE have common Database services which
+  4)  Some application within a ZONE have common Database services which
     runs within that ZONE.
 
-5)  Log all unauthorized communication between workloads for monitoring
+  5)  Log all unauthorized communication between workloads for monitoring
     and for compliance.
 
 #### 5.12.2 Phased approach for NSX-T micro-segmentation policies:
@@ -1394,39 +1400,39 @@ The data center security has following Requirements:
 
 Here are the suggested steps:
 
-1.  Define NSX-T Groups for each of the Infrastructure Services.
+  1.  Define NSX-T Groups for each of the Infrastructure Services.
     Following example shows the group for DNS and NTP servers with IP
     addresses of the respective servers as group members.
 
-![Graphical user interface, text, application Description automatically
-generated](images/Figure5-20.jpg)
+![Table Description automatically
+    generated](images/Figure5-20.jpg)
+
 <p align="center">
 Figure 5-20: NSX-T Groups Example*
 </p>
 
-2.  Define policy for common services; like DNS, NTP as in the figure
+  2.  Define policy for common services; like DNS, NTP as in the figure
     below.
 
-    a.  Define this policy under Infrastructure tab as shown below.
+      a.  Define this policy under Infrastructure tab as shown below.
 
-    b.  Have two rules allows all workloads to access the common
+      b.  Have two rules allows all workloads to access the common
         services using GROUPS created in step 1 above.
 
-    c.  Use Layer 7 context profile, DNS and NTP, in the rule to further
+      c.  Use Layer 7 context profile, DNS and NTP, in the rule to further
         enhance the security posture.
 
-    d.  Have catch-all deny rule to deny any other destination for the
+      d.  Have catch-all deny rule to deny any other destination for the
         common services with logging enabled, for compliance and
         monitoring any unauthorized communication.
 
-> Note: If the management entities are not in an exclusion list, this
-> section would need to have rules to allow the required protocols
-> between the appropriate entities. See
-> <https://ports.vmware.com/home/vSphere> for the ports for all VMware
-> products.
+ Note: If the management entities are not in an exclusion list, this
+ section would need to have rules to allow the required protocols
+ between the appropriate entities. See <https://ports.vmware.com/home/vSphere>
+ for the ports for all VMware products.
 
-![Graphical user interface Description automatically
-generated](images/Figure5-21.jpg)
+![Table Description automatically
+ generated](images/Figure5-21.jpg)
 <p align="center">
 Figure 5-21: Common Services Policy Example*
 </p>
@@ -1454,8 +1460,8 @@ Here are the suggested steps:
     Production, say DC-ZONE-DEV-IP & DC-ZONE-PROD-IP with respective IP
     CIDR BLOCKs associated with the respective zones as members.
 
-![Graphical user interface, text, application Description automatically
-generated](images/Figure5-22.jpg)
+![Table Description automatically
+    generated](images/Figure5-22.jpg)
 
 Figure 5‑22: Policies Between Zones* *Example*
 
@@ -1470,8 +1476,8 @@ Figure 5‑22: Policies Between Zones* *Example*
     Logging requirements are driven by the balance between storage costs
     and compliance requirements.)
 
-![Graphical user interface, text, application Description automatically
-generated](images/Figure5-23.jpg)
+![Table Description automatically
+    generated](images/Figure5-23.jpg)
 <p align="center">
 Figure 5‑23: Policy Example*
 </p>
@@ -1504,25 +1510,25 @@ and build more granular port-defined security policies between tiers.
 Once you have above information about DEV-ZONE-APP-1, create
 segmentation around application by following steps:
 
-1.  Apply two tags to all the VM's belonging to APP-1 in the ZONE DEV,
+  1.  Apply two tags to all the VM's belonging to APP-1 in the ZONE DEV,
     ZONE-DEV & APP-1.
 
-![Graphical user interface, application Description automatically
-generated](images/Figure5-24.jpg)
+![Table Description automatically
+    generated](images/Figure5-24.jpg)
 <p align="center">
 Figure 5‑24: Segmentation Example*
 </p>
 
-2.  Create a GROUP, say "ZONE-DEV-APP-1" with criteria to match on tag
+  2.  Create a GROUP, say "ZONE-DEV-APP-1" with criteria to match on tag
     equal to "ZONE-DEV & APP-1".
 
-![Graphical user interface, text, application Description automatically
-generated](images/Figure5-25.jpg)
+![Table Description automatically
+    generated](images/Figure5-25.jpg)
 <p align="center">
 Figure 5‑25: Group Example*
 </p>
 
-3.  Define a policy under Application category with 3 rules as in the
+  3.  Define a policy under Application category with 3 rules as in the
     figure:
 
     a.  Have "Applied To" set to "ZONE-DEV-APP-1" to limit the scope of
@@ -1587,30 +1593,30 @@ application-specific maintenance windows, where required.
 An emergency policy mainly leveraged for following use case and enforced
 on top of the firewall table:
 
-1.  To quarantine vulnerable or compromised workloads in order to
+  1.  To quarantine vulnerable or compromised workloads in order to
     protect other workloads.
 
-2.  May want to explicitly deny known bad actors by their IP Subnet
+  2.  May want to explicitly deny known bad actors by their IP Subnet
     based on GEO location or reputation.
 
 This policy is defined in Emergency Category as shown:
 
-1.  First two rules quarantine all traffic from workloads belonging to
+  1.  First two rules quarantine all traffic from workloads belonging to
     group GRP-QUARANTINE.
 
-    a.  "GRP-QUARANTINE" is a group which matches all VM with tag equal
+      a.  "GRP-QUARANTINE" is a group which matches all VM with tag equal
         to "QUARANTINE". (If guest introspection is implemented, the
         AV/AM tags can be used to define different quarantine levels.)
 
-    b.  In order to enforce this policy to vulnerable VM's, add tag
+      b.  In order to enforce this policy to vulnerable VM's, add tag
         "QUARANTINE" to isolate the VM's and allow only admin to access
         the hosts to fix the vulnerability.
 
-2.  Other two rule uses Group with known bad IP's to stop any
+  2.  Other two rule uses Group with known bad IP's to stop any
     communication with those IP's.
 
-![Diagram, timeline Description automatically
-  generated](images/Figure5-27.jpg)
+![Table Description automatically
+    generated](images/Figure5-27.jpg)
 <p align="center">
 Figure 5‑27: Emergency Category Example*
 </p>
@@ -1661,31 +1667,31 @@ the design. You can use same NSX manager as a single pane of glass to
 define Security policies to all of these different scenarios using
 different security controls.
 
-**1- NSX Managed Workloads with standard VLAN based networking.**
+  **1- NSX Managed Workloads with standard VLAN based networking.**
 
--   NSX Distributed Firewall can be used to protect NSX managed VM\'s,
+    -   NSX Distributed Firewall can be used to protect NSX managed VM\'s,
     Containers & Physical Server workloads.
 
-**2- NSX Managed Workloads with NSX Overlay for networking:**
+  **2- NSX Managed Workloads with NSX Overlay for networking:**
 
--   NSX Distributed Firewall can be used to protect NSX managed VM\'s,
+    -   NSX Distributed Firewall can be used to protect NSX managed VM\'s,
     Containers & Physical Server workloads.
 
-**3- Non-NSX Managed workloads on traditional VLAN based network.**
+  **3- Non-NSX Managed workloads on traditional VLAN based network.**
 
--          NSX Gateway Firewall can provide the Inter VLAN routing and
+    -   NSX Gateway Firewall can provide the Inter VLAN routing and
     Firewalling. The Service Interface on NSX Gateway is used as a
     gateway & firewall for all non-NSX managed VLAN workloads.
 
-**4- NSX managed Overlay workload bridged to Non-NSX managed VLAN.**
+  **4- NSX managed Overlay workload bridged to Non-NSX managed VLAN.**
 
--   This is the bridge scenario where an Overlay network is extended at
+    -   This is the bridge scenario where an Overlay network is extended at
     Laye-2 into a VLAN network using NSX Bridge. In this case, NSX
     managed Overlay workloads can use DFW/D-IDS, and Bridge Firewall can
     secure traffic at the boundary between VLAN and overlay network.
 
-![Diagram, timeline Description automatically
-generated](images/Figure5-28.png)
+![Table Description automatically
+    generated](images/Figure5-28.png)
 <p align="center">
 Figure 5‑28: NSX Firewall For all Deployment Scenario*
 </p>
