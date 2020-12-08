@@ -241,10 +241,10 @@ policy rule logging, NSX-T uses the ovs-fwd module.
 The MPA interacts with NSX-T Manager to export status, rules, and flow
 statistics. The MPA module gets the rules and flows statistics from data
 path tables using the stats exporter module.
-<p align="center">
+
 ![Timeline Description automatically
 generated](images/Figure5-4.png)
-</p>
+
 <p align="center">
 Figure 5‑4: NSX-T DFW Data Plane Components on KVM
 </p>
@@ -341,6 +341,7 @@ generated](images/Figure5-6.png)
 <p align="center">
 Figure 5‑6: Micro-segmentation Methodologies
 </p>
+
 #### Ethernet
 
 The Ethernet Section of the policy is a Layer 2 firewalling section. All
@@ -452,6 +453,7 @@ generated](images/Figure5-7.png)
 <p align="center">
 Figure 5‑7: Security Rule Model
 </p>
+
 ### 5.4.3 Security Policy - Consumption Model
 
 NSX-T Security policy is consumed by the firewall rule table, which is
@@ -504,7 +506,7 @@ granular security inside the perimeter. Once this basic
 micro-segmentation is in place, the writing of per-application rules can
 begin.
 
-1.  **Groups**
+**Groups**
 
 NSX-T provides collection of referenceable objects represented in a
 construct called Groups. The selection of a specific policy methodology
@@ -534,7 +536,7 @@ shows one type of grouping criteria based on NSX-T Objects.
   **MAC Address**    Selected MAC sets container will be used. MAC sets contain a list of individual MAC addresses.
   **AD Groups**      Grouping based on Active Directory groups for Identity Firewall (VDI/RDSH) use case.
 
-Table 8‑1: NSX-T Objects used for Groups
+Table 5‑1: NSX-T Objects used for Groups
 
 Table 5-2 list the selection criteria based on VM properties.
 
@@ -545,7 +547,7 @@ Table 5-2 list the selection criteria based on VM properties.
   **OS Name**         All VM with specific operating System type and version
   **Computer name**   All VMs that contain/equal/starts/not-equals with the string as part of their hostname.
 
-Table 8‑2: VM Properties used for Groups
+Table 5‑2: VM Properties used for Groups
 
 The use of Groups gives more flexibility as an environment changes over
 time. This approach has three major advantages:
@@ -710,7 +712,7 @@ options are listed in Table 5-5
 |            | connections.                                           |
 +------------+--------------------------------------------------------+
 
-Table 8‑4: Firewall Rule Table -- "Action" Values
+Table 5‑4: Firewall Rule Table -- "Action" Values
 
 **Advanced Settings: Following settings are under advanced settings
 options:**
@@ -758,6 +760,7 @@ generated](images/Figure5-9.png)
 <p align="center">
 Figure 5‑9: 3-Tier Application Network Topology
 </p>
+
 In order to define micro-segmentation policy for this application use
 the category Application on DFW rule table and add a new policy session
 and rules within it for each application
@@ -779,7 +782,7 @@ policy configuration is shown in Table 5-6.
   Group-DB-IP      IP Members: 172.16.30.0/24
   ---------------- ----------------------------
 
-Table 8‑5: Firewall Rule Table - Example 1
+Table 5‑5: Firewall Rule Table - Example 1
 
   ----------------- -------------- ----------------- ---------------------------- ------------ ----------------
   **Name**          **Source**     **Destination**   **Service**                  **Action**   **Applied To**
@@ -789,7 +792,7 @@ Table 8‑5: Firewall Rule Table - Example 1
   **Block-Other**   Any            Any               Any                          Drop         All
   ----------------- -------------- ----------------- ---------------------------- ------------ ----------------
 
-Table 8‑6: Firewall Rule Table - Example 1
+Table 5‑6: Firewall Rule Table - Example 1
 
 The DFW engine is able to enforce network traffic access control based
 on the provided information. To use this type of construct, exact IP
@@ -810,7 +813,7 @@ policy configuration is shown in Table 5-8.
   Group-SEG-DB     Static inclusion: SEG-DB
   ---------------- ---------------------------
 
-Table 8‑7: Firewall Rule Table - Example 2
+Table 5‑7: Firewall Rule Table - Example 2
 
 +----------+----------+----------+----------+----------+----------+
 | >        | > **     | >        | > **S    | > **     | > *      |
@@ -843,7 +846,7 @@ Table 8‑7: Firewall Rule Table - Example 2
 |          |          |          |          |          | p-SEG-DB |
 +----------+----------+----------+----------+----------+----------+
 
-Table 8‑8: Firewall Rule Table - Example 2
+Table 5‑8: Firewall Rule Table - Example 2
 
 Reading this policy rule table would be easier for all teams in the
 organization, ranging from security auditors to architects to
@@ -1008,6 +1011,7 @@ generated](images/Figure5-11.png)
 <p align="center">
 Figure 5‑11: NSX-T DFW Physical Topology -- VLAN Backed Workloads
 </p>
+
 ### 5.8.2 NSX-T Distributed Firewall for Mix of VLAN and Overlay backed workloads
 
 This use case mainly applies to customer who wants to adapt NSX-T
@@ -1029,19 +1033,20 @@ The following diagram depicts this use case with logical and physical
 topology.
 
 ![Graphical user interface, diagram Description automatically
-generated](images/Figure5-12.png){width="5.705359798775153in"
-height="1.7817049431321086in"}
+generated](images/Figure5-12.png)
+
 <p align="center">
 Figure 5‑12: NSX-T DFW Logical Topology -- Mix of VLAN & Overlay Backed
 Workloads
 </p>
+
 ![Timeline Description automatically
-generated](images/Figure5-13.png){width="5.049029965004374in"
-height="2.779753937007874in"}
+generated](images/Figure5-13.png)
 <p align="center">
 Figure 5‑13: NSX-T DFW Physical Topology -- Mix of VLAN & Overlay Backed
 Workloads
 </p>
+
 ### 5.8.3 NSX-T Distributed Firewall for Overlay Backed workloads
 
 In this use case where all the virtualized applications are hosted or
@@ -1140,11 +1145,11 @@ highly desirable in containerized environments to reduce the consumption
 of IP addresses.
 
 ![Diagram Description automatically
-generated](images/Figure5-14.png){width="6.5in"
-height="3.1494838145231845in"}
+generated](images/Figure5-14.png)
 <p align="center">
 Figure 5‑14: Tier-0 Gateway Firewall -- Virtual-to-Physical Boundary
 </p>
+
 #### Gateway Firewall as Inter-tenant Firewall
 
 The Tier-1 Gateway firewall is used as inter-tenant firewall within an
@@ -1157,8 +1162,7 @@ the traffic. The intra-tenant traffic continues to leverage distributed
 routing and firewalling capabilities native to the NSX-T.
 
 ![Diagram Description automatically
-generated](images/Figure5-15.png){width="6.362601706036745in"
-height="2.736602143482065in"}
+generated](images/Figure5-15.png)
 <p align="center">
 Figure 5‑15: Tier-1 Gateway Firewall - Inter-tenant
 </p>
@@ -1189,11 +1193,11 @@ deployment scenario. Please refer to NSX-T interoperability matrix to
 check certified partners for the given use case.
 
 ![Timeline Description automatically
-generated](images/Figure5-16.png){width="6.5in"
-height="4.776570428696413in"}
+generated](images/Figure5-16.png)
 <p align="center">
 Figure 5‑16: Gateway Firewall -- Service Insertion
 </p>
+
 ## 5.10 Endpoint Protection with NSX-T
 
 NSX-T provides the Endpoint Protection platform to allow 3^rd^ party
@@ -1225,15 +1229,16 @@ height="4.005819116360455in"}
 <p align="center">
 Figure 5‑17: Endpoint Protection
 </p>
+
 The Endpoint Protection platform for NSX-T following a simple 3 step
 process to use.
 
 ![A picture containing graphical user interface Description
-automatically generated](images/Figure5-18.png){width="6.489583333333333in"
-height="2.0520833333333335in"}
+automatically generated](images/Figure5-18.png)
 <p align="center">
 Figure 5‑18: Endpoint Protection Steps
 </p>
+
 ### 5.10.1 Registration
 
 Registration of the VMware Partner console with NSX-T and vCenter.
@@ -1330,11 +1335,11 @@ customer data center. This approach can be applied to both brownfield
 and greenfield deployment.
 
 ![Table Description automatically
-generated](images/Figure5-19.jpg){width="5.948699693788276in"
-height="3.1916426071741033in"}\
+generated](images/Figure5-19.jpg)
 <p align="center">
 Figure 5-19: Data Center Topology Example*
 </p>
+
 The data center has following characteristics:
 
 1)  Application deployment is split into two zones - production &
@@ -1394,11 +1399,11 @@ Here are the suggested steps:
     addresses of the respective servers as group members.
 
 ![Graphical user interface, text, application Description automatically
-generated](images/Figure5-20.jpg){width="6.5in"
-height="3.3569444444444443in"}\
+generated](images/Figure5-20.jpg)
 <p align="center">
 Figure 5-20: NSX-T Groups Example*
 </p>
+
 2.  Define policy for common services; like DNS, NTP as in the figure
     below.
 
@@ -1421,11 +1426,11 @@ Figure 5-20: NSX-T Groups Example*
 > products.
 
 ![Graphical user interface Description automatically
-generated](images/Figure5-21.jpg){width="6.5in"
-height="2.423611111111111in"}\
+generated](images/Figure5-21.jpg)
 <p align="center">
 Figure 5-21: Common Services Policy Example*
 </p>
+
 **Phase-2: Define Segmentation around ZONES - by having an explicit
     allow policy between ZONES**
 
@@ -1450,8 +1455,7 @@ Here are the suggested steps:
     CIDR BLOCKs associated with the respective zones as members.
 
 ![Graphical user interface, text, application Description automatically
-generated](images/Figure5-22.jpg){width="5.915620078740157in"
-height="3.5537970253718285in"}
+generated](images/Figure5-22.jpg)
 
 Figure 5‑22: Policies Between Zones* *Example*
 
@@ -1467,11 +1471,11 @@ Figure 5‑22: Policies Between Zones* *Example*
     and compliance requirements.)
 
 ![Graphical user interface, text, application Description automatically
-generated](images/Figure5-23.jpg){width="6.5in"
-height="1.7194444444444446in"}
+generated](images/Figure5-23.jpg)
 <p align="center">
 Figure 5‑23: Policy Example*
 </p>
+
 **Phase-3: Define Segmentation around every Application, one at a
     time**
 
@@ -1504,20 +1508,20 @@ segmentation around application by following steps:
     ZONE-DEV & APP-1.
 
 ![Graphical user interface, application Description automatically
-generated](images/Figure5-24.jpg){width="5.0212751531058615in"
-height="2.9784317585301836in"}
+generated](images/Figure5-24.jpg)
 <p align="center">
 Figure 5‑24: Segmentation Example*
 </p>
+
 2.  Create a GROUP, say "ZONE-DEV-APP-1" with criteria to match on tag
     equal to "ZONE-DEV & APP-1".
 
 ![Graphical user interface, text, application Description automatically
-generated](images/Figure5-25.jpg){width="5.223405511811023in"
-height="1.7137904636920385in"}
+generated](images/Figure5-25.jpg)
 <p align="center">
 Figure 5‑25: Group Example*
 </p>
+
 3.  Define a policy under Application category with 3 rules as in the
     figure:
 
@@ -1540,11 +1544,11 @@ Figure 5‑25: Group Example*
         communication.
 
 ![Graphical user interface, application Description automatically
-generated](images/Figure5-26.jpg){width="5.571170166229221in"
-height="1.6097998687664041in"}
+generated](images/Figure5-26.jpg)
 <p align="center">
 Figure 5‑26: Application Policy Example*
 </p>
+
 **Phase-4: Review Logs for Application Profile.**
 
 Log entries will identify the direction (In/Out) as well as the protocol
@@ -1605,10 +1609,12 @@ This policy is defined in Emergency Category as shown:
 2.  Other two rule uses Group with known bad IP's to stop any
     communication with those IP's.
 
-![](images/Figure5-27.jpg){width="6.5in" height="2.0347222222222223in"}
+![Diagram, timeline Description automatically
+  generated](images/Figure5-27.jpg)
 <p align="center">
 Figure 5‑27: Emergency Category Example*
 </p>
+
 In creating these policies, the iterative addition of rules to the
 policy is something that can be done at any time. It is only when the
 action of the default rule changes from allow to deny/drop that a
@@ -1679,8 +1685,7 @@ different security controls.
     secure traffic at the boundary between VLAN and overlay network.
 
 ![Diagram, timeline Description automatically
-generated](images/Figure5-28.png){width="6.5in"
-height="2.926388888888889in"}
+generated](images/Figure5-28.png)
 <p align="center">
 Figure 5‑28: NSX Firewall For all Deployment Scenario*
 </p>
