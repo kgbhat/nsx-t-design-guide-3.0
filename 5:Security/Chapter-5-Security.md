@@ -131,7 +131,7 @@ each other to provide a scalable, topology agnostic distributed firewall
 solution.
 
 ![Diagram Description automatically
-generated](images/Figure5-2.png){width="6.5in" height="2.78125in"}
+generated](images/Figure5-2.png)
 <p align="center">
 Figure 5‑2: NSX-T DFW Architecture and Components
 </p>
@@ -220,8 +220,7 @@ require vCenter to be present. Figure 5‑3 provides details on the data
 plane components for the ESX host.
 
 ![Timeline Description automatically
-generated](images/Figure5-3.png){width="6.282544838145232in"
-height="3.9728674540682416in"}
+generated](images/Figure5-3.png)
 <p align="center">
 Figure 5‑3: NSX-T DFW Data Plane Components on an ESXi Host
 </p>
@@ -242,10 +241,10 @@ policy rule logging, NSX-T uses the ovs-fwd module.
 The MPA interacts with NSX-T Manager to export status, rules, and flow
 statistics. The MPA module gets the rules and flows statistics from data
 path tables using the stats exporter module.
-
+<p align="center">
 ![Timeline Description automatically
-generated](images/Figure5-4.png){width="5.1419214785651794in"
-height="3.339933289588801in"}
+generated](images/Figure5-4.png)
+</p>
 <p align="center">
 Figure 5‑4: NSX-T DFW Data Plane Components on KVM
 </p>
@@ -284,8 +283,7 @@ the firewall policy is allowed onto the network). Figure 5‑5 diagrams
 the policy rule lookup and packet flow.
 
 ![A picture containing timeline Description automatically
-generated](images/Figure5-5.png){width="6.3255850831146105in"
-height="2.860009842519685in"}
+generated](images/Figure5-5.png)
 <p align="center">
 Figure 5‑5: NSX-T DFW Policy Lookup
 </p>
@@ -339,8 +337,7 @@ building security rule sets within the NSX-T DFW. This section will look
 at each methodology and highlight appropriate usage.
 
 ![A picture containing diagram Description automatically
-generated](images/Figure5-6.png){width="6.5in"
-height="3.5533333333333332in"}
+generated](images/Figure5-6.png)
 <p align="center">
 Figure 5‑6: Micro-segmentation Methodologies
 </p>
@@ -451,7 +448,7 @@ category can have one or more policy within it to organize firewall
 rules under that category.
 
 ![Diagram Description automatically
-generated](images/Figure5-7.png){width="6.5in" height="3.306340769903762in"}
+generated](images/Figure5-7.png)
 <p align="center">
 Figure 5‑7: Security Rule Model
 </p>
@@ -595,8 +592,7 @@ above could be children of a parent Group named "SG-APP-1-AllTier". This
 organization is also shown in Figure 5‑8.
 
 ![Diagram Description automatically
-generated](images/Figure5-8.png){width="6.476563867016623in"
-height="2.510676946631671in"}
+generated](images/Figure5-8.png)
 <p align="center">
 Figure 5‑8: Group and Nested Group Example
 </p>
@@ -758,8 +754,7 @@ so each VM has a dedicated instance of DFW attached to its vNIC/segment
 port.
 
 ![Timeline Description automatically
-generated](images/Figure5-9.png){width="3.9564884076990374in"
-height="2.0533333333333332in"}
+generated](images/Figure5-9.png)
 <p align="center">
 Figure 5‑9: 3-Tier Application Network Topology
 </p>
@@ -1004,14 +999,12 @@ The following diagram depicts this use case with logical and physical
 topology.
 
 ![Timeline Description automatically
-generated](images/Figure5-10.png){width="4.741071741032371in"
-height="2.0808038057742784in"}
+generated](images/Figure5-10.png)
 <p align="center">
 Figure 5‑10: NSX-T DFW Logical topology -- VLAN Backed Workloads
 </p>
 ![Timeline Description automatically
-generated](images/Figure5-11.png){width="4.711589020122485in"
-height="2.575452755905512in"}
+generated](images/Figure5-11.png)
 <p align="center">
 Figure 5‑11: NSX-T DFW Physical Topology -- VLAN Backed Workloads
 </p>
