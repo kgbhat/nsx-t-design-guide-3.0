@@ -91,10 +91,10 @@ capabilities are not limited to homogeneous vSphere environments. NSX
 supports the heterogeneity of platforms and infrastructure that is
 common in organizations today.
 
-<p align="center">
+
 ![Diagram, schematic Description automatically
 generated](images/Figure5-1.png)
-
+<p align="center">
 Figure 5‑1: Example of Micro-segmentation with NSX
 </p>
 Micro-segmentation provided by NSX-T is an essential element of zero
