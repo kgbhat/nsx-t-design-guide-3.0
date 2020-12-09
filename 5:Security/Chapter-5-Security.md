@@ -1406,9 +1406,9 @@ Here are the suggested steps:
   1.  Define NSX-T Groups for each of the Infrastructure Services.
     Following example shows the group for DNS and NTP servers with IP
     addresses of the respective servers as group members.
-
+    
 ![Table Description automatically
-    generated](images/Figure5-20.jpg)
+    generated](images/Figure5-20.png)
 
 <p align="center">
 Figure 5-20: NSX-T Groups Example
@@ -1435,7 +1435,8 @@ Figure 5-20: NSX-T Groups Example
  for the ports for all VMware products.
 
 ![Table Description automatically
- generated](images/Figure5-21.jpg)
+    generated](images/Figure5-21.png)
+
 <p align="center">
 Figure 5-21: Common Services Policy Example
 </p>
@@ -1464,7 +1465,7 @@ Here are the suggested steps:
     CIDR BLOCKs associated with the respective zones as members.
 
 ![Table Description automatically
-    generated](images/Figure5-22.jpg)
+    generated](images/Figure5-22.png)
 
 Figure 5‑22: Policies Between Zones* *Example*
 
