@@ -655,11 +655,13 @@ NSX-T Firewall policy can also be locked by a user to avoid losing any
 update to policy with multiple people editing same policy at the same
 time.
 
-  ---------- -------- ------------ ----------------- ------------- -------------- ---------------- ------------ ---------------------- -----------
-  **Name**   **ID**   **Source**   **Destination**   **Service**   **Profiles**   **Applied To**   **Action**   **Advanced Setting**   **Stats**
-  ---------- -------- ------------ ----------------- ------------- -------------- ---------------- ------------ ---------------------- -----------
+ 
+  | **Name** |  **ID** |  **Source** | **Destination** |  **Service**  | **Profiles** |  **Applied To** |  **Action**  | **Advanced Setting** |  **Stats**|
+  |--------- | --------| ----------- | --------------- | ------------- | ------------ | --------------- | ------------ | -------------------- | ----------|
 
-Table 8‑3: Policy Rule Fields
+<p align="center">
+    Table 8‑3: Policy Rule Fields
+</p>
 
 A rule within a policy is composed of field shown in Table 5-3 and its
 meaning is described below
@@ -713,23 +715,20 @@ which will negatively affect performance.
 **Action**: Define enforcement method for this policy rule; available
 options are listed in Table 5-5
 
-+------------+--------------------------------------------------------+
+
 | **Action** | **Description**                                        |
-+------------+--------------------------------------------------------+
+|------------|--------------------------------------------------------|
 | **Drop**   | Block silently the traffic.                            |
-+------------+--------------------------------------------------------+
 | **Allow**  | Allow the traffic.                                     |
-+------------+--------------------------------------------------------+
 | **Reject** | Reject action will send back to initiator:             |
-|            |                                                        |
 |            | • RST packets for TCP connections.                     |
-|            |                                                        |
 |            | • ICMP unreachable with network administratively       |
 |            | prohibited code for UDP, ICMP and other IP             |
 |            | connections.                                           |
-+------------+--------------------------------------------------------+
 
+<p align="center">
 Table 5‑4: Firewall Rule Table -- "Action" Values
+</p>
 
 **Advanced Settings: Following settings are under advanced settings
 options:**
@@ -794,23 +793,25 @@ Groups in this example are identified in Table 5-5 while the firewall
 policy configuration is shown in Table 5-6.
 
   ---------------- ----------------------------
-  **Group name**   **Group definition**
-  Group-WEB-IP     IP Members: 172.16.10.0/24
-  Group-APP-IP     IP Members: 172.16.20.0/24
-  Group-DB-IP      IP Members: 172.16.30.0/24
-  ---------------- ----------------------------
+  |**Group name** |  **Group definition** |
+  | Group-WEB-IP  |   IP Members: 172.16.10.0/24 |
+  | Group-APP-IP  |   IP Members: 172.16.20.0/24 |
+  | Group-DB-IP   |   IP Members: 172.16.30.0/24 |
 
-Table 5‑5: Firewall Rule Table - Example 1
+<p align="center">
+    Table 5‑5: Firewall Rule Table - Example 1
+ </p>
 
-  ----------------- -------------- ----------------- ---------------------------- ------------ ----------------
-  **Name**          **Source**     **Destination**   **Service**                  **Action**   **Applied To**
-  **Any to Web**    Any            Group-WEB-IP      https                        Allow        All
-  **Web to App**    Group-WEB-IP   Group-APP-IP      \<Enterprise Service Bus\>   Allow        All
-  **App to DB**     Group-APP-IP   Group-DB-IP       SQL                          Allow        All
-  **Block-Other**   Any            Any               Any                          Drop         All
-  ----------------- -------------- ----------------- ---------------------------- ------------ ----------------
-
+  
+  |**Name**      |    **Source**  |   **Destination**|  **Service**               | **Action**  | **Applied To** |
+  | -------------| -------------- | -----------------| -------------------------- | ------------| -------------- |
+  |**Any to Web**|   Any          |  Group-WEB-IP    |  https                     |   Allow     |    All         |
+  |**Web to App**|   Group-WEB-IP |  Group-APP-IP    |  \<Enterprise Service Bus\>|   Allow     |    All         |
+  |**App to DB** |   Group-APP-IP |  Group-DB-IP     |  SQL                       |   Allow     |    All         |
+  |**Block-Other**|  Any          |  Any             |  Any                       |   Drop      |    All         |
+<p align="center">
 Table 5‑6: Firewall Rule Table - Example 1
+</p>
 
 The DFW engine is able to enforce network traffic access control based
 on the provided information. To use this type of construct, exact IP
@@ -824,47 +825,29 @@ This example uses the infrastructure methodology to define policy rule.
 Groups in this example are identified in Table 5-7 while the firewall
 policy configuration is shown in Table 5-8.
 
-  ---------------- ---------------------------
-  **Group name**   **Group definition**
-  Group-SEG-WEB    Static inclusion: SEG-WEB
-  Group-SEG-APP    Static inclusion: SEG-APP
-  Group-SEG-DB     Static inclusion: SEG-DB
-  ---------------- ---------------------------
-
+  
+  |**Group name**  | **Group definition**|
+  |----------------|---------------------------|
+  |Group-SEG-WEB   | Static inclusion: SEG-WEB |
+  |Group-SEG-APP   | Static inclusion: SEG-APP |
+  |Group-SEG-DB    | Static inclusion: SEG-DB  |
+  
+<p align="center">
 Table 5‑7: Firewall Rule Table - Example 2
+</p>
 
-+----------+----------+----------+----------+----------+----------+
-| >        | > **     | >        | > **S    | > **     | > *      |
-| **Name** | Source** |  **Desti | ervice** | Action** | *Applied |
-|          |          | nation** |          |          | > To**   |
-+----------+----------+----------+----------+----------+----------+
-| > **Any  | > Any    | > Group  | > https  | > Allow  | > Group  |
-| > to     |          | -SEG-WEB |          |          | -SEG-WEB |
-| > Web**  |          |          |          |          |          |
-+----------+----------+----------+----------+----------+----------+
-| > **Web  | > Group  | > Group  | > \<En   | > Allow  | > Group  |
-| > to     | -SEG-WEB | -SEG-APP | terprise |          | -SEG-WEB |
-| > App**  |          |          | >        |          | >        |
-|          |          |          |  Service |          | > Group  |
-|          |          |          | > Bus\>  |          | -SEG-APP |
-+----------+----------+----------+----------+----------+----------+
-| > **App  | > Group  | > Grou   | > SQL    | > Allow  | > Group  |
-| > to     | -SEG-APP | p-SEG-DB |          |          | -SEG-APP |
-| > DB**   |          |          |          |          | >        |
-|          |          |          |          |          | > Grou   |
-|          |          |          |          |          | p-SEG-DB |
-+----------+----------+----------+----------+----------+----------+
-| >        | > Any    | > Any    | > Any    | > Drop   | > Group  |
-|  **Block |          |          |          |          | -SEG-WEB |
-| -Other** |          |          |          |          | >        |
-|          |          |          |          |          | > Group  |
-|          |          |          |          |          | -SEG-APP |
-|          |          |          |          |          | >        |
-|          |          |          |          |          | > Grou   |
-|          |          |          |          |          | p-SEG-DB |
-+----------+----------+----------+----------+----------+----------+
 
+| **Name** | Source** |  **Destination** | ervice** | Action** | *Applied To**|
+|----------|----------|----------|----------|----------|----------|
+| **Any to Web **  |  Any    |  Group-SEG-WEB  | https  | Allow  | Group-SEG-WEB   |
+| **Web to Web **  |  Group-SEG-WEB    |  Group-SEG-APP  | <Enterprise Service Bus>  | Allow  | Group-SEG-WEB   |
+|                  |                   |                 |                           |        | Group-SEG-APP  |
+| **App to DB **  |  Group-SEG-APP    |  Group-SEG-DB  | SQL  | Allow  | Group-SEG-DB   |
+|                 |                   |                |      |        | Group-SEG-APP  |
+
+<p align="center">
 Table 5‑8: Firewall Rule Table - Example 2
+</p>
 
 Reading this policy rule table would be easier for all teams in the
 organization, ranging from security auditors to architects to
