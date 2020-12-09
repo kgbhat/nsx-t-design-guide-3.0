@@ -792,7 +792,7 @@ This example shows use of the network methodology to define policy rule.
 Groups in this example are identified in Table 5-5 while the firewall
 policy configuration is shown in Table 5-6.
 
-  ---------------- ----------------------------
+
   |**Group name** |  **Group definition** |
   | Group-WEB-IP  |   IP Members: 172.16.10.0/24 |
   | Group-APP-IP  |   IP Members: 172.16.20.0/24 |
@@ -839,9 +839,9 @@ Table 5‑7: Firewall Rule Table - Example 2
 
 | **Name** | **Source** |  **Destination** | **Service** | **Action** | **Applied To**|
 |----------|----------|----------|----------|----------|----------|
-| **Any to Web **  |  Any    |  Group-SEG-WEB  | https  | Allow  | Group-SEG-WEB   |
-| **Web to Web **  |  Group-SEG-WEB    |  Group-SEG-APP  | <Enterprise Service Bus>  | Allow  | Group-SEG-WEB, Group-SEG-APP   |
-| **App to DB **  |  Group-SEG-APP    |  Group-SEG-DB  | SQL  | Allow  | Group-SEG-DB, Group-SEG-APP  |
+| **Any to Web**  |  Any    |  Group-SEG-WEB  | https  | Allow  | Group-SEG-WEB   |
+| **Web to Web**  |  Group-SEG-WEB    |  Group-SEG-APP  | \<Enterprise Service Bus\>  | Allow  | Group-SEG-WEB, Group-SEG-APP   |
+| **App to DB**  |  Group-SEG-APP    |  Group-SEG-DB  | SQL  | Allow  | Group-SEG-DB, Group-SEG-APP  |
 
 <p align="center">
 Table 5‑8: Firewall Rule Table - Example 2
