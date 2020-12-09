@@ -1671,12 +1671,11 @@ define Security policies to all of these different scenarios using
 different security controls.
 
   **1- NSX Managed Workloads with standard VLAN based networking.**
-    -   NSX Distributed Firewall can be used to protect NSX managed VM's,
+      - NSX Distributed Firewall can be used to protect NSX managed VM's,
     Containers & Physical Server workloads.
 
   **2- NSX Managed Workloads with NSX Overlay for networking:**
-  
-    -   NSX Distributed Firewall can be used to protect NSX managed VM's,
+     - NSX Distributed Firewall can be used to protect NSX managed VM's,
     Containers & Physical Server workloads.
 
   **3- Non-NSX Managed workloads on traditional VLAN based network.**
