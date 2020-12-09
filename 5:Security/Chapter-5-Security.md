@@ -765,7 +765,7 @@ port.
     <img src="images/Figure5-9.png">
 </p>
 <p align="center">
-*Figure 5‑9: 3-Tier Application Network Topology*
+Figure 5‑9: 3-Tier Application Network Topology
 </p>
 
 In order to define micro-segmentation policy for this application use
@@ -1008,14 +1008,16 @@ network design.
 The following diagram depicts this use case with logical and physical
 topology.
 
-![Timeline Description automatically
-generated](images/Figure5-10.png)
+<p align="center">
+    <img src="images/Figure5-10.png">
+</p>
 <p align="center">
 Figure 5‑10: NSX-T DFW Logical topology -- VLAN Backed Workloads
 </p>
 
-![Timeline Description automatically
-generated](images/Figure5-11.png)
+<p align="center">
+    <img src="images/Figure5-11.png">
+</p>
 <p align="center">
 Figure 5‑11: NSX-T DFW Physical Topology -- VLAN Backed Workloads
 </p>
@@ -1040,16 +1042,18 @@ before traffic arrives at the VM.
 The following diagram depicts this use case with logical and physical
 topology.
 
-![Graphical user interface, diagram Description automatically
-generated](images/Figure5-12.png)
+<p align="center">
+    <img src="images/Figure5-12.png">
+</p>
 
 <p align="center">
 Figure 5‑12: NSX-T DFW Logical Topology -- Mix of VLAN & Overlay Backed
 Workloads
 </p>
 
-![Timeline Description automatically
-generated](images/Figure5-13.png)
+<p align="center">
+    <img src="images/Figure5-13.png">
+</p>
 <p align="center">
 Figure 5‑13: NSX-T DFW Physical Topology -- Mix of VLAN & Overlay Backed
 Workloads
@@ -1152,8 +1156,9 @@ to firewalling, the T1 Gateway can perform per tenant NAT. This is
 highly desirable in containerized environments to reduce the consumption
 of IP addresses.
 
-![Diagram Description automatically
-generated](images/Figure5-14.png)
+<p align="center">
+    <img src="images/Figure5-14.png">
+</p>
 <p align="center">
 Figure 5‑14: Tier-0 Gateway Firewall -- Virtual-to-Physical Boundary
 </p>
@@ -1169,8 +1174,9 @@ policy before sending to the Tier-0 Gateway for further processing of
 the traffic. The intra-tenant traffic continues to leverage distributed
 routing and firewalling capabilities native to the NSX-T.
 
-![Diagram Description automatically
-generated](images/Figure5-15.png)
+<p align="center">
+    <img src="images/Figure5-15.png">
+</p>
 <p align="center">
 Figure 5‑15: Tier-1 Gateway Firewall - Inter-tenant
 </p>
