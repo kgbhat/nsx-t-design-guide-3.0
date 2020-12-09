@@ -761,8 +761,10 @@ three tiers by providing inter-tier routing. NSX-T DFW has been enabled,
 so each VM has a dedicated instance of DFW attached to its vNIC/segment
 port.
 
-![Timeline Description automatically
-generated](images/Figure5-9.png)
+<p align="center">
+    <img src="images/Figure5-9.png">
+</p>
+
 <p align="center">
 Figure 5‑9: 3-Tier Application Network Topology
 </p>
