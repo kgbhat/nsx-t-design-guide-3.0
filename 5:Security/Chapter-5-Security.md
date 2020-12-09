@@ -92,8 +92,9 @@ supports the heterogeneity of platforms and infrastructure that is
 common in organizations today.
 
 
-![Diagram, schematic Description automatically
-generated](images/Figure5-1.png)
+<p align="center">
+    <img src="images/Figure5-1.png">
+</p>
 <p align="center">
 Figure 5‑1: Example of Micro-segmentation with NSX
 </p>
@@ -131,8 +132,9 @@ plane and its associated components, detailing how they interact with
 each other to provide a scalable, topology agnostic distributed firewall
 solution.
 
-![Diagram Description automatically
-generated](images/Figure5-2.png)
+<p align="center">
+    <img src="images/Figure5-2.png">
+</p>
 <p align="center">
 Figure 5‑2: NSX-T DFW Architecture and Components
 </p>
@@ -221,8 +223,9 @@ vSphere -- it uses the VMware Internetworking Service Insertion Platform
 require vCenter to be present. Figure 5‑3 provides details on the data
 plane components for the ESX host.
 
-![Timeline Description automatically
-generated](images/Figure5-3.png)
+<p align="center">
+    <img src="images/Figure5-3.png">
+</p>
 <p align="center">
 Figure 5‑3: NSX-T DFW Data Plane Components on an ESXi Host
 </p>
@@ -245,8 +248,9 @@ The MPA interacts with NSX-T Manager to export status, rules, and flow
 statistics. The MPA module gets the rules and flows statistics from data
 path tables using the stats exporter module.
 
-![Timeline Description automatically
-generated](images/Figure5-4.png)
+<p align="center">
+    <img src="images/Figure5-4.png">
+</p>
 
 <p align="center">
 Figure 5‑4: NSX-T DFW Data Plane Components on KVM
@@ -286,8 +290,9 @@ control through an explicit allow model (i.e., only traffic defined in
 the firewall policy is allowed onto the network). Figure 5‑5 diagrams
 the policy rule lookup and packet flow.
 
-![A picture containing timeline Description automatically
-generated](images/Figure5-5.png)
+<p align="center">
+    <img src="images/Figure5-5.png">
+</p>
 <p align="center">
 Figure 5‑5: NSX-T DFW Policy Lookup
 </p>
@@ -341,8 +346,9 @@ not found.**6 can be utilized for grouping application workloads and
 building security rule sets within the NSX-T DFW. This section will look
 at each methodology and highlight appropriate usage.
 
-![A picture containing diagram Description automatically
-generated](images/Figure5-6.png)
+<p align="center">
+    <img src="images/Figure5-6.png">
+</p>
 <p align="center">
 Figure 5‑6: Micro-segmentation Methodologies
 </p>
@@ -453,8 +459,9 @@ help admin with grouping Policy based on the category. Each firewall
 category can have one or more policy within it to organize firewall
 rules under that category.
 
-![Diagram Description automatically
-generated](images/Figure5-7.png)
+<p align="center">
+    <img src="images/Figure5-7.png">
+</p>
 <p align="center">
 Figure 5‑7: Security Rule Model
 </p>
@@ -598,8 +605,9 @@ Nesting of Group is also possible; all three of the Groups in the list
 above could be children of a parent Group named "SG-APP-1-AllTier". This
 organization is also shown in Figure 5‑8.
 
-![Diagram Description automatically
-generated](images/Figure5-8.png)
+<p align="center">
+    <img src="images/Figure5-8.png">
+</p>
 <p align="center">
 Figure 5‑8: Group and Nested Group Example
 </p>
@@ -1206,8 +1214,9 @@ The following diagram provides the logical representation of overall
 deployment scenario. Please refer to NSX-T interoperability matrix to
 check certified partners for the given use case.
 
-![Timeline Description automatically
-generated](images/Figure5-16.png)
+<p align="center">
+    <img src="images/Figure5-16.png">
+</p>
 <p align="center">
 Figure 5‑16: Gateway Firewall -- Service Insertion
 </p>
@@ -1238,8 +1247,9 @@ quarantine policy based ont eh result of the AV/AM scan with the
 definition of DFW security rules based ont eh partner tags.
 
 
-![Table Description automatically
-    generated](images/Figure5-17.png)
+<p align="center">
+    <img src="images/Figure5-17.png">
+</p>
 <p align="center">
 Figure 5‑17: Endpoint Protection
 </p>
@@ -1247,8 +1257,9 @@ Figure 5‑17: Endpoint Protection
 The Endpoint Protection platform for NSX-T following a simple 3 step
 process to use.
 
-![Table Description automatically
-    generated](images/Figure5-18.png)
+<p align="center">
+    <img src="images/Figure5-18.png">
+</p>
 <p align="center">
 Figure 5‑18: Endpoint Protection Steps
 </p>
@@ -1349,8 +1360,9 @@ customer data center. This approach can be applied to both brownfield
 and greenfield deployment.
 
 
-![Table Description automatically
-    generated](images/Figure5-19.png)
+<p align="center">
+    <img src="images/Figure5-19.png">
+</p>
 
 <p align="center">
 Figure 5-19: Data Center Topology Example
@@ -1414,8 +1426,9 @@ Here are the suggested steps:
     Following example shows the group for DNS and NTP servers with IP
     addresses of the respective servers as group members.
     
-![Table Description automatically
-    generated](images/Figure5-20.png)
+<p align="center">
+    <img src="images/Figure5-20.png">
+</p>
 
 <p align="center">
 Figure 5-20: NSX-T Groups Example
@@ -1441,8 +1454,9 @@ Figure 5-20: NSX-T Groups Example
  between the appropriate entities. See <https://ports.vmware.com/home/vSphere>
  for the ports for all VMware products.
 
-![Table Description automatically
-    generated](images/Figure5-21.png)
+<p align="center">
+    <img src="images/Figure5-21.png">
+</p>
 
 <p align="center">
 Figure 5-21: Common Services Policy Example
@@ -1471,8 +1485,9 @@ Here are the suggested steps:
     Production, say DC-ZONE-DEV-IP & DC-ZONE-PROD-IP with respective IP
     CIDR BLOCKs associated with the respective zones as members.
 
-![Table Description automatically
-    generated](images/Figure5-22.png)
+<p align="center">
+    <img src="images/Figure5-22.png">
+</p>
 <p align="center">
 Figure 5‑22: Policies Between Zones* *Example*
 </p>
@@ -1487,12 +1502,13 @@ Figure 5‑22: Policies Between Zones* *Example*
     others, there may be a compliance mandate to log every action.
     Logging requirements are driven by the balance between storage costs
     and compliance requirements.)
-
-![Table Description automatically
-    generated](images/Figure5-23.png)
+    
+<p align="center">
+    <img src="images/Figure5-23.png">
+</p>
 <p align="center">
 Figure 5‑23: Policy Example
-
+</p>
 
 **Phase-3: Define Segmentation around every Application, one at a
     time**
@@ -1525,8 +1541,9 @@ segmentation around application by following steps:
   1.  Apply two tags to all the VM's belonging to APP-1 in the ZONE DEV,
     ZONE-DEV & APP-1.
 
-![Table Description automatically
-    generated](images/Figure5-24.png)
+<p align="center">
+    <img src="images/Figure5-24.png">
+</p>
 <p align="center">
 Figure 5‑24: Segmentation Example
 </p>
@@ -1534,8 +1551,9 @@ Figure 5‑24: Segmentation Example
   2.  Create a GROUP, say "ZONE-DEV-APP-1" with criteria to match on tag
     equal to "ZONE-DEV & APP-1".
 
-![Table Description automatically
-    generated](images/Figure5-25.png)
+<p align="center">
+    <img src="images/Figure5-25.png">
+</p>
 <p align="center">
 Figure 5‑25: Group Example
 </p>
@@ -1561,8 +1579,9 @@ Figure 5‑25: Group Example
         VM's. Enable log for compliance and monitoring any unauthorized
         communication.
 
-![Table Description automatically
-    generated](images/Figure5-26.png)
+<p align="center">
+    <img src="images/Figure5-26.png">
+</p>
 <p align="center">
 Figure 5‑26: Application Policy Example
 </p>
@@ -1628,8 +1647,9 @@ This policy is defined in Emergency Category as shown:
     communication with those IP's.
 
 
-![Table Description automatically
-    generated](images/Figure5-27.png)
+<p align="center">
+    <img src="images/Figure5-27.png">
+</p>
 <p align="center">
 Figure 5‑27: Emergency Category Example
 </p>
@@ -1699,8 +1719,9 @@ different security controls.
     managed Overlay workloads can use DFW/D-IDS, and Bridge Firewall can
     secure traffic at the boundary between VLAN and overlay network.
 
-![Table Description automatically
-    generated](images/Figure5-28.png)
+<p align="center">
+    <img src="images/Figure5-28.png">
+</p>
 <p align="center">
 Figure 5‑28: NSX Firewall For all Deployment Scenario
 </p>
