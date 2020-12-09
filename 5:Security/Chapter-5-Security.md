@@ -564,6 +564,7 @@ Table 5-2 list the selection criteria based on VM properties.
 <p align="center">
 Table 5‑2: VM Properties used for Groups
 </p>
+
 The use of Groups gives more flexibility as an environment changes over
 time. This approach has three major advantages:
 
@@ -660,7 +661,7 @@ time.
   |--------- | --------| ----------- | --------------- | ------------- | ------------ | --------------- | ------------ | -------------------- | ----------|
 
 <p align="center">
-    Table 8‑3: Policy Rule Fields
+    Table 5‑3: Policy Rule Fields
 </p>
 
 A rule within a policy is composed of field shown in Table 5-3 and its
@@ -721,10 +722,10 @@ options are listed in Table 5-5
 | **Drop**   | Block silently the traffic.                            |
 | **Allow**  | Allow the traffic.                                     |
 | **Reject** | Reject action will send back to initiator:             |
-             | • RST packets for TCP connections.                     |
-             | • ICMP unreachable with network administratively       |
-             | prohibited code for UDP, ICMP and other IP             |
-             | connections.                                           |
+|            | • RST packets for TCP connections.                     |
+|            | • ICMP unreachable with network administratively       |
+|            | prohibited code for UDP, ICMP and other IP             |
+|            | connections.                                           |
 
 <p align="center">
 Table 5‑4: Firewall Rule Table -- "Action" Values
