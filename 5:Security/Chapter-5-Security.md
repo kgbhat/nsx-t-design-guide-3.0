@@ -1466,8 +1466,9 @@ Here are the suggested steps:
 
 ![Table Description automatically
     generated](images/Figure5-22.png)
-
+<p align="center">
 Figure 5‑22: Policies Between Zones* *Example*
+</p>
 
 2.  Define policy in environment category using the IP GROUPS created in
     step-1 to restrict all communication between Development and
@@ -1481,10 +1482,10 @@ Figure 5‑22: Policies Between Zones* *Example*
     and compliance requirements.)
 
 ![Table Description automatically
-    generated](images/Figure5-23.jpg)
+    generated](images/Figure5-23.png)
 <p align="center">
 Figure 5‑23: Policy Example
-</p>
+
 
 **Phase-3: Define Segmentation around every Application, one at a
     time**
@@ -1518,7 +1519,7 @@ segmentation around application by following steps:
     ZONE-DEV & APP-1.
 
 ![Table Description automatically
-    generated](images/Figure5-24.jpg)
+    generated](images/Figure5-24.png)
 <p align="center">
 Figure 5‑24: Segmentation Example
 </p>
@@ -1527,7 +1528,7 @@ Figure 5‑24: Segmentation Example
     equal to "ZONE-DEV & APP-1".
 
 ![Table Description automatically
-    generated](images/Figure5-25.jpg)
+    generated](images/Figure5-25.png)
 <p align="center">
 Figure 5‑25: Group Example
 </p>
@@ -1555,7 +1556,7 @@ Figure 5‑25: Group Example
 
 
 ![Table Description automatically
-            generated](images/Figure5-26.png)
+    generated](images/Figure5-26.png)
 <p align="center">
 Figure 5‑26: Application Policy Example
 </p>
@@ -1622,7 +1623,7 @@ This policy is defined in Emergency Category as shown:
 
 
 ![Table Description automatically
-        generated](images/Figure5-27.png)
+    generated](images/Figure5-27.png)
 <p align="center">
 Figure 5‑27: Emergency Category Example
 </p>
