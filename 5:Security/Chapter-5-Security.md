@@ -1536,21 +1536,21 @@ Figure 5‑25: Group Example
   3.  Define a policy under Application category with 3 rules as in the
     figure:
 
-   a.  Have "Applied To" set to "ZONE-DEV-APP-1" to limit the scope of
+        a. Have "Applied To" set to "ZONE-DEV-APP-1" to limit the scope of
         policy only to the application VM's.
 
-   b.  The first rule allows all internal communications between the
+        b. The first rule allows all internal communications between the
         application VM's. Enable logging for this rule to profile the
         application tiers and protocols. (Each log entry will contain 5
         tuple details about every connection.)
 
-   c.  The second rule allows access to front end of the application
+        c. The second rule allows access to front end of the application
         from outside. Use the L7 context profile to allow only SSL
         traffic. The below example uses Exclude Source from within ZONE,
         so that application is only accessible from outside, not from
         within except APP's other VM's, as per rule one.
 
-   d.  Default deny all other communication to these "ZONE-DEV-APP-1"
+        d. Default deny all other communication to these "ZONE-DEV-APP-1"
         VM's. Enable log for compliance and monitoring any unauthorized
         communication.
 
