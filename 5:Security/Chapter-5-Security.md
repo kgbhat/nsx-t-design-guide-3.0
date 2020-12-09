@@ -721,10 +721,10 @@ options are listed in Table 5-5
 | **Drop**   | Block silently the traffic.                            |
 | **Allow**  | Allow the traffic.                                     |
 | **Reject** | Reject action will send back to initiator:             |
-|            | • RST packets for TCP connections.                     |
-|            | • ICMP unreachable with network administratively       |
-|            | prohibited code for UDP, ICMP and other IP             |
-|            | connections.                                           |
+             | • RST packets for TCP connections.                     |
+             | • ICMP unreachable with network administratively       |
+             | prohibited code for UDP, ICMP and other IP             |
+             | connections.                                           |
 
 <p align="center">
 Table 5‑4: Firewall Rule Table -- "Action" Values
@@ -837,13 +837,11 @@ Table 5‑7: Firewall Rule Table - Example 2
 </p>
 
 
-| **Name** | Source** |  **Destination** | ervice** | Action** | *Applied To**|
+| **Name** | **Source** |  **Destination** | **Service** | **Action** | **Applied To**|
 |----------|----------|----------|----------|----------|----------|
 | **Any to Web **  |  Any    |  Group-SEG-WEB  | https  | Allow  | Group-SEG-WEB   |
-| **Web to Web **  |  Group-SEG-WEB    |  Group-SEG-APP  | <Enterprise Service Bus>  | Allow  | Group-SEG-WEB   |
-|                  |                   |                 |                           |        | Group-SEG-APP  |
-| **App to DB **  |  Group-SEG-APP    |  Group-SEG-DB  | SQL  | Allow  | Group-SEG-DB   |
-|                 |                   |                |      |        | Group-SEG-APP  |
+| **Web to Web **  |  Group-SEG-WEB    |  Group-SEG-APP  | <Enterprise Service Bus>  | Allow  | Group-SEG-WEB, Group-SEG-APP   |
+| **App to DB **  |  Group-SEG-APP    |  Group-SEG-DB  | SQL  | Allow  | Group-SEG-DB, Group-SEG-APP  |
 
 <p align="center">
 Table 5‑8: Firewall Rule Table - Example 2
