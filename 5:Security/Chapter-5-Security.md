@@ -1671,23 +1671,19 @@ define Security policies to all of these different scenarios using
 different security controls.
 
   **1- NSX Managed Workloads with standard VLAN based networking.**
-
     -   NSX Distributed Firewall can be used to protect NSX managed VM's,
     Containers & Physical Server workloads.
 
   **2- NSX Managed Workloads with NSX Overlay for networking:**
-
     -   NSX Distributed Firewall can be used to protect NSX managed VM's,
     Containers & Physical Server workloads.
 
   **3- Non-NSX Managed workloads on traditional VLAN based network.**
-
     -   NSX Gateway Firewall can provide the Inter VLAN routing and
     Firewalling. The Service Interface on NSX Gateway is used as a
     gateway & firewall for all non-NSX managed VLAN workloads.
 
   **4- NSX managed Overlay workload bridged to Non-NSX managed VLAN.**
-
     -   This is the bridge scenario where an Overlay network is extended at
     Laye-2 into a VLAN network using NSX Bridge. In this case, NSX
     managed Overlay workloads can use DFW/D-IDS, and Bridge Firewall can
