@@ -1,4 +1,4 @@
-{:toc}
+
 # 5 NSX-T Security
 
 In addition to providing network virtualization, NSX-T also serves as an
