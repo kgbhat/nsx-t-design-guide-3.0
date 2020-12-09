@@ -1675,6 +1675,7 @@ different security controls.
     Containers & Physical Server workloads.
 
   **2- NSX Managed Workloads with NSX Overlay for networking:**
+  
     -   NSX Distributed Firewall can be used to protect NSX managed VM's,
     Containers & Physical Server workloads.
 
