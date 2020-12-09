@@ -1341,10 +1341,12 @@ The following data center topology used which matches with most of our
 customer data center. This approach can be applied to both brownfield
 and greenfield deployment.
 
+
 ![Table Description automatically
-generated](images/Figure5-19.jpg)
+    generated](images/Figure5-19.png)
+
 <p align="center">
-Figure 5-19: Data Center Topology Example*
+Figure 5-19: Data Center Topology Example
 </p>
 
 The data center has following characteristics:
@@ -1670,21 +1672,21 @@ the design. You can use same NSX manager as a single pane of glass to
 define Security policies to all of these different scenarios using
 different security controls.
 
-  **1- NSX Managed Workloads with standard VLAN based networking.**
-      - NSX Distributed Firewall can be used to protect NSX managed VM's,
+  **1- NSX Managed Workloads with standard VLAN based networking:**
+    NSX Distributed Firewall can be used to protect NSX managed VM's,
     Containers & Physical Server workloads.
 
   **2- NSX Managed Workloads with NSX Overlay for networking:**
-     - NSX Distributed Firewall can be used to protect NSX managed VM's,
+    NSX Distributed Firewall can be used to protect NSX managed VM's,
     Containers & Physical Server workloads.
 
-  **3- Non-NSX Managed workloads on traditional VLAN based network.**
-    -   NSX Gateway Firewall can provide the Inter VLAN routing and
+  **3- Non-NSX Managed workloads on traditional VLAN based network:**
+    NSX Gateway Firewall can provide the Inter VLAN routing and
     Firewalling. The Service Interface on NSX Gateway is used as a
     gateway & firewall for all non-NSX managed VLAN workloads.
 
-  **4- NSX managed Overlay workload bridged to Non-NSX managed VLAN.**
-    -   This is the bridge scenario where an Overlay network is extended at
+  **4- NSX managed Overlay workload bridged to Non-NSX managed VLAN:**
+    This is the bridge scenario where an Overlay network is extended at
     Laye-2 into a VLAN network using NSX Bridge. In this case, NSX
     managed Overlay workloads can use DFW/D-IDS, and Bridge Firewall can
     secure traffic at the boundary between VLAN and overlay network.
@@ -1692,5 +1694,5 @@ different security controls.
 ![Table Description automatically
     generated](images/Figure5-28.png)
 <p align="center">
-Figure 5‑28: NSX Firewall For all Deployment Scenario*
+Figure 5‑28: NSX Firewall For all Deployment Scenario
 </p>
