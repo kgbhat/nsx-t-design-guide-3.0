@@ -540,28 +540,30 @@ can be used to create groups between various criteria. A Group creates a
 logical grouping of VMs based on static and dynamic criteria. Table 5-1
 shows one type of grouping criteria based on NSX-T Objects.
 
-  **NSX-T Object**   **Description**
-  ------------------ ---------------------------------------------------------------------------------------------------------------------
-  **IP Address**     Grouping of IP addresses and subnets.
-  **Segment**        All VMs/vNICs connected to this segment/logical switch segment will be selected.
-  **Group**          Nested (Sub-group) of collection of referenceable objects - all VMs/vNICs defined within the Group will be selected
-  **Segment Port**   This particular vNIC instance will be selected.
-  **MAC Address**    Selected MAC sets container will be used. MAC sets contain a list of individual MAC addresses.
-  **AD Groups**      Grouping based on Active Directory groups for Identity Firewall (VDI/RDSH) use case.
+  | NSX-T Object |   Description |
+  | ------------ | ------------- |
+  |**IP Address** |     Grouping of IP addresses and subnets.|
+  |**Segment** |       All VMs/vNICs connected to this segment/logical switch segment will be selected.|
+  |**Group** |         Nested (Sub-group) of collection of referenceable objects - all VMs/vNICs defined within the Group will be selected|
+  |**Segment Port** |  This particular vNIC instance will be selected.|
+  |**MAC Address** |    Selected MAC sets container will be used. MAC sets contain a list of individual MAC addresses.|
+  |**AD Groups**  |    Grouping based on Active Directory groups for Identity Firewall (VDI/RDSH) use case.|
 
-Table 5‑1: NSX-T Objects used for Groups
+<p align="center">
+    Table 5‑1: NSX-T Objects used for Groups
+</p>
 
 Table 5-2 list the selection criteria based on VM properties.
 
-  **VM Property**     **Description**
-  ------------------- -----------------------------------------------------------------------------------------
-  **VM Name**         All VMs that contain/equal/starts/not-equals with the string as part of their name.
-  **Tags**            All VMs that are applied with specified NSX-T security tags
-  **OS Name**         All VM with specific operating System type and version
-  **Computer name**   All VMs that contain/equal/starts/not-equals with the string as part of their hostname.
-
+  |**VM Property**   |  **Description** |
+  | -----------------| -----------------------------------------------------------------------------------------|
+  | **VM Name**      |   All VMs that contain/equal/starts/not-equals with the string as part of their name.|
+  | **Tags**         |   All VMs that are applied with specified NSX-T security tags|
+  | **OS Name**      |   All VM with specific operating System type and version|
+  | **Computer name**|   All VMs that contain/equal/starts/not-equals with the string as part of their hostname.|
+<p align="center">
 Table 5‑2: VM Properties used for Groups
-
+</p>
 The use of Groups gives more flexibility as an environment changes over
 time. This approach has three major advantages:
 
