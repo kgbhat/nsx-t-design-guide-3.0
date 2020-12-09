@@ -764,9 +764,8 @@ port.
 <p align="center">
     <img src="images/Figure5-9.png">
 </p>
-
 <p align="center">
-Figure 5‑9: 3-Tier Application Network Topology
+*Figure 5‑9: 3-Tier Application Network Topology*
 </p>
 
 In order to define micro-segmentation policy for this application use
