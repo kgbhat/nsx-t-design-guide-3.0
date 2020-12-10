@@ -2,8 +2,7 @@
 
 <!--ts-->
 # 5 NSX-T Security
-
-  **Table of Contents**
+ ** Table Of Contents **
    * [5 NSX-T Security](#5-nsx-t-security)
       * [5.1 NSX-T Security Use Cases](#51-nsx-t-security-use-cases)
       * [5.2 NSX-T DFW Architecture and Components](#52-nsx-t-dfw-architecture-and-components)
@@ -49,7 +48,7 @@
             * [5.12.2 Phased approach for NSX-T micro-segmentation policies:](#5122-phased-approach-for-nsx-t-micro-segmentation-policies)
       * [5.13 NSX Firewall -- For All Deployment Scenarios](#513-nsx-firewall----for-all-deployment-scenarios)
 
-<!-- Added by: bhatg, at: Thu Dec 10 10:42:32 PST 2020 -->
+<!-- Added by: bhatg, at: Thu Dec 10 10:50:19 PST 2020 -->
 
 <!--te-->
 
