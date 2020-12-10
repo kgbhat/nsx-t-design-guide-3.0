@@ -408,14 +408,14 @@ at each methodology and highlight appropriate usage.
 Figure 5‑6: Micro-segmentation Methodologies
 </p>
 
-#### Ethernet
+**Ethernet**
 
 The Ethernet Section of the policy is a Layer 2 firewalling section. All
 rules in this section must use MAC Addresses for their source or
 destination objects. Any rule defined with any other object type will be
 ignored.
 
-#### Application
+**Application**
 
 In an application-centric approach, grouping is based on the application
 type (e.g., VMs tagged as "Web-Servers"), application environment (e.g.,
@@ -437,7 +437,7 @@ An application-centric model does not provide significant benefits in an
 environment that is static, lacks mobility, and has infrastructure
 functions that are properly demarcated.
 
-#### Infrastructure
+**Infrastructure**
 
 Infrastructure-centric grouping is based on infrastructure components
 such as segments or segment ports, identifying where application VMs are
@@ -447,7 +447,7 @@ administrators to understand logical and physical boundaries.
 If there are no physical or logical boundaries in the environment, then
 an infrastructure-centric approach is not suitable.
 
-#### Network
+**Network**
 
 Network-centric is the traditional approach of grouping based on L2 or
 L3 elements. Grouping can be done based on MAC addresses, IP addresses,
@@ -561,7 +561,7 @@ following sections offer more details on grouping and firewall rule
 table construction with an example of grouping objects and defining
 NSX-T DFW policy.
 
-#### Group Creation Strategies
+**Group Creation Strategies**
 
 The most basic grouping strategy is creation of a group around every
 application which is hosted in the NSX-T environment. Each 3-tier,
@@ -634,7 +634,7 @@ time. This approach has three major advantages:
 -   As NSX-T adds more grouping object criteria, the group criteria can
     be edited to better reflect the data center environment.
 
-    **Using Nested Groups**
+**Using Nested Groups**
 
 Groups can be nested. A Group may contain multiple groups or a
 combination of groups and other grouping objects. A security rule
@@ -680,7 +680,7 @@ account the frequency of group changes for associated VMs. A large
 number of group changes applied frequently means the grouping criteria
 is suboptimal.
 
-#### Define Policy using DFW Rule Table
+**Define Policy using DFW Rule Table**
 
 The NSX-T DFW rule table starts with a default rule to allow any
 traffic. An administrator can add multiple policies on top of default
@@ -1190,7 +1190,7 @@ inside.
 This section provides two examples for possible deployment and data path
 implementation.
 
-#### Gateway Firewall as Perimeter Firewall at Virtual and Physical Boundary
+**Gateway Firewall as Perimeter Firewall at Virtual and Physical Boundary**
 
 The Tier-0 Gateway firewall is used as perimeter firewall between
 physical and virtual domains. This is mainly used for N-S traffic from
@@ -1210,7 +1210,7 @@ of IP addresses.
 Figure 5‑14: Tier-0 Gateway Firewall -- Virtual-to-Physical Boundary
 </p>
 
-#### Gateway Firewall as Inter-tenant Firewall
+**Gateway Firewall as Inter-tenant Firewall**
 
 The Tier-1 Gateway firewall is used as inter-tenant firewall within an
 NSX-T virtual domain. This is used to define policies between different
@@ -1229,7 +1229,7 @@ Figure 5‑15: Tier-1 Gateway Firewall - Inter-tenant
 </p>
 
 
-#### Gateway Firewall with NGFW Service Insertion -- As perimeter or Inter Tenant Service
+**Gateway Firewall with NGFW Service Insertion -- As perimeter or Inter Tenant Service**
 
 This deployment scenario extends the Gateway Firewall scenarios depicted
 above with additional capability to insert the NGFW on top of native
@@ -1303,11 +1303,11 @@ process to use.
 Figure 5‑18: Endpoint Protection Steps
 </p>
 
-### 5.10.1 Registration
+**Registration**
 
 Registration of the VMware Partner console with NSX-T and vCenter.
 
-### 5.10.2 Deployment
+**Deployment**
 
 Creating a Service Deployment of the VMware Partner SVM and deployment
 to the ESXi Clusters. The SVMs require a Management network with which
@@ -1315,7 +1315,7 @@ to talk to the Partner Management Console. This can be handled by IP
 Pool in NSX-T or by DHCP from the network. Management networks must be
 on a VSS or VDS switch.
 
-### 5.10.3 Consumption
+**Consumption**
 
 Consumption of the Endpoint Protection platform consists of creating a
 Service Profile of which references the Service Deployment and then
@@ -1455,7 +1455,7 @@ The data center security has following Requirements:
   5)  Log all unauthorized communication between workloads for monitoring
     and for compliance.
 
-#### 5.12.2 Phased approach for NSX-T micro-segmentation policies:
+### 5.12.2 Phased approach for NSX-T micro-segmentation policies:
 
 **Phase-1: Define common-services policy.**
 
