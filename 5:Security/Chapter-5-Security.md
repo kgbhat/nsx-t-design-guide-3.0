@@ -1,12 +1,6 @@
 
 
-<p align="center">
-**Chapter5: NSX-T Security**
-</p>
-
-<p align="center">
 **Table Of Contents**
-</p>
 
 <!--ts-->
    * [5 NSX-T Security](#5-nsx-t-security)
