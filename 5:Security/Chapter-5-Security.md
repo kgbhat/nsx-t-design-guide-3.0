@@ -1,8 +1,13 @@
 
 
+<p align="center">
+**Chapter5: NSX-T Security**
+</p>
+<p align="center">
+**Table Of Contents**
+</p>
 <!--ts-->
    * [5 NSX-T Security](#5-nsx-t-security)
-   * [5 NSX-T Security Overview](#5-nsx-t-security-overview)
       * [5.1 NSX-T Security Use Cases](#51-nsx-t-security-use-cases)
       * [5.2 NSX-T DFW Architecture and Components](#52-nsx-t-dfw-architecture-and-components)
          * [5.2.1 Management Plane](#521-management-plane)
@@ -47,12 +52,13 @@
             * [5.12.2 Phased approach for NSX-T micro-segmentation policies:](#5122-phased-approach-for-nsx-t-micro-segmentation-policies)
       * [5.13 NSX Firewall -- For All Deployment Scenarios](#513-nsx-firewall----for-all-deployment-scenarios)
 
-<!-- Added by: bhatg, at: Thu Dec 10 10:52:58 PST 2020 -->
+<!-- Added by: bhatg, at: Thu Dec 10 10:56:22 PST 2020 -->
 
 <!--te-->
 
 
-# 5 NSX-T Security Overview
+# 5 NSX-T Security
+
 In addition to providing network virtualization, NSX-T also serves as an
 advanced security platform, providing a rich set of features to
 streamline the deployment of security solutions. This chapter focuses on
