@@ -15,14 +15,8 @@
          * [5.3.3 NSX-T DFW Policy Lookup and Packet Flow](#533-nsx-t-dfw-policy-lookup-and-packet-flow)
       * [5.4 NSX-T Security Policy - Plan, Design and Implement](#54-nsx-t-security-policy---plan-design-and-implement)
          * [5.4.1 Security Policy Methodology](#541-security-policy-methodology)
-            * [Ethernet](#ethernet)
-            * [Application](#application)
-            * [Infrastructure](#infrastructure)
-            * [Network](#network)
          * [5.4.2 Security Rule Model](#542-security-rule-model)
          * [5.4.3 Security Policy - Consumption Model](#543-security-policy---consumption-model)
-            * [Group Creation Strategies](#group-creation-strategies)
-            * [Define Policy using DFW Rule Table](#define-policy-using-dfw-rule-table)
             * [Examples of Policy Rules for 3-Tier Application](#examples-of-policy-rules-for-3-tier-application)
       * [5.5 Intrusion Detection](#55-intrusion-detection)
       * [5.6 Service Insertion](#56-service-insertion)
@@ -35,20 +29,14 @@
          * [5.9.1 Consumption](#591-consumption)
          * [5.9.2 Implementation](#592-implementation)
          * [5.9.3 Deployment Scenarios](#593-deployment-scenarios)
-            * [Gateway Firewall as Perimeter Firewall at Virtual and Physical Boundary](#gateway-firewall-as-perimeter-firewall-at-virtual-and-physical-boundary)
-            * [Gateway Firewall as Inter-tenant Firewall](#gateway-firewall-as-inter-tenant-firewall)
-            * [Gateway Firewall with NGFW Service Insertion -- As perimeter or Inter Tenant Service](#gateway-firewall-with-ngfw-service-insertion----as-perimeter-or-inter-tenant-service)
       * [5.10 Endpoint Protection with NSX-T](#510-endpoint-protection-with-nsx-t)
-         * [5.10.1 Registration](#5101-registration)
-         * [5.10.2 Deployment](#5102-deployment)
-         * [5.10.3 Consumption](#5103-consumption)
       * [5.11 Recommendation for Security Deployments](#511-recommendation-for-security-deployments)
       * [5.12 A Practical Approach to Start Building a Micro-segmentation Policy](#512-a-practical-approach-to-start-building-a-micro-segmentation-policy)
          * [5.12.1 Data Center Topology and requirements:](#5121-data-center-topology-and-requirements)
-            * [5.12.2 Phased approach for NSX-T micro-segmentation policies:](#5122-phased-approach-for-nsx-t-micro-segmentation-policies)
+         * [5.12.2 Phased approach for NSX-T micro-segmentation policies:](#5122-phased-approach-for-nsx-t-micro-segmentation-policies)
       * [5.13 NSX Firewall -- For All Deployment Scenarios](#513-nsx-firewall----for-all-deployment-scenarios)
 
-<!-- Added by: bhatg, at: Thu Dec 10 10:56:22 PST 2020 -->
+<!-- Added by: bhatg, at: Thu Dec 10 11:06:28 PST 2020 -->
 
 <!--te-->
 
@@ -816,7 +804,7 @@ options:**
  Popularity Index for the given rule. Stats per rule are Polled and
  aggregated every 15 minutes from all the transport nodes.
 
-#### Examples of Policy Rules for 3-Tier Application
+**Examples of Policy Rules for 3-Tier Application**
 
 Figure 5‑9 shows a standard 3-Tier application topology used to define
 NSX-T DFW policy. Three web servers are connected to "SEG Web", two
