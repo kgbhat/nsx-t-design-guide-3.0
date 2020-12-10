@@ -1,4 +1,55 @@
 
+
+<!--ts-->
+   * [5 NSX-T Security](#5-nsx-t-security)
+      * [5.1 NSX-T Security Use Cases](#51-nsx-t-security-use-cases)
+      * [5.2 NSX-T DFW Architecture and Components](#52-nsx-t-dfw-architecture-and-components)
+         * [5.2.1 Management Plane](#521-management-plane)
+         * [5.2.2 Control Plane](#522-control-plane)
+         * [5.2.3 Data Plane](#523-data-plane)
+      * [5.3 NSX-T Data Plane Implementation - ESXi vs. KVM Hosts](#53-nsx-t-data-plane-implementation---esxi-vs-kvm-hosts)
+         * [5.3.1 ESXi Hosts- Data Plane Components](#531-esxi-hosts--data-plane-components)
+         * [5.3.2 KVM Hosts- Data Plane Components](#532-kvm-hosts--data-plane-components)
+         * [5.3.3 NSX-T DFW Policy Lookup and Packet Flow](#533-nsx-t-dfw-policy-lookup-and-packet-flow)
+      * [5.4 NSX-T Security Policy - Plan, Design and Implement](#54-nsx-t-security-policy---plan-design-and-implement)
+         * [5.4.1 Security Policy Methodology](#541-security-policy-methodology)
+            * [Ethernet](#ethernet)
+            * [Application](#application)
+            * [Infrastructure](#infrastructure)
+            * [Network](#network)
+         * [5.4.2 Security Rule Model](#542-security-rule-model)
+         * [5.4.3 Security Policy - Consumption Model](#543-security-policy---consumption-model)
+            * [Group Creation Strategies](#group-creation-strategies)
+            * [Define Policy using DFW Rule Table](#define-policy-using-dfw-rule-table)
+            * [Examples of Policy Rules for 3-Tier Application](#examples-of-policy-rules-for-3-tier-application)
+      * [5.5 Intrusion Detection](#55-intrusion-detection)
+      * [5.6 Service Insertion](#56-service-insertion)
+      * [5.7 Additional Security Features](#57-additional-security-features)
+      * [5.8 NSX-T Security Enforcement -- Agnostic to Network Isolation](#58-nsx-t-security-enforcement----agnostic-to-network-isolation)
+         * [5.8.1 NSX-T Distributed Firewall for VLAN Backed workloads](#581-nsx-t-distributed-firewall-for-vlan-backed-workloads)
+         * [5.8.2 NSX-T Distributed Firewall for Mix of VLAN and Overlay backed workloads](#582-nsx-t-distributed-firewall-for-mix-of-vlan-and-overlay-backed-workloads)
+         * [5.8.3 NSX-T Distributed Firewall for Overlay Backed workloads](#583-nsx-t-distributed-firewall-for-overlay-backed-workloads)
+      * [5.9 Gateway Firewall](#59-gateway-firewall)
+         * [5.9.1 Consumption](#591-consumption)
+         * [5.9.2 Implementation](#592-implementation)
+         * [5.9.3 Deployment Scenarios](#593-deployment-scenarios)
+            * [Gateway Firewall as Perimeter Firewall at Virtual and Physical Boundary](#gateway-firewall-as-perimeter-firewall-at-virtual-and-physical-boundary)
+            * [Gateway Firewall as Inter-tenant Firewall](#gateway-firewall-as-inter-tenant-firewall)
+            * [Gateway Firewall with NGFW Service Insertion -- As perimeter or Inter Tenant Service](#gateway-firewall-with-ngfw-service-insertion----as-perimeter-or-inter-tenant-service)
+      * [5.10 Endpoint Protection with NSX-T](#510-endpoint-protection-with-nsx-t)
+         * [5.10.1 Registration](#5101-registration)
+         * [5.10.2 Deployment](#5102-deployment)
+         * [5.10.3 Consumption](#5103-consumption)
+      * [5.11 Recommendation for Security Deployments](#511-recommendation-for-security-deployments)
+      * [5.12 A Practical Approach to Start Building a Micro-segmentation Policy](#512-a-practical-approach-to-start-building-a-micro-segmentation-policy)
+         * [5.12.1 Data Center Topology and requirements:](#5121-data-center-topology-and-requirements)
+            * [5.12.2 Phased approach for NSX-T micro-segmentation policies:](#5122-phased-approach-for-nsx-t-micro-segmentation-policies)
+      * [5.13 NSX Firewall -- For All Deployment Scenarios](#513-nsx-firewall----for-all-deployment-scenarios)
+
+<!-- Added by: bhatg, at: Thu Dec 10 10:42:32 PST 2020 -->
+
+<!--te-->
+
 # 5 NSX-T Security
 
 In addition to providing network virtualization, NSX-T also serves as an
@@ -656,7 +707,7 @@ NSX-T Firewall policy can also be locked by a user to avoid losing any
 update to policy with multiple people editing same policy at the same
 time.
 
- 
+
   | **Name** |  **ID** |  **Source** | **Destination** |  **Service**  | **Profiles** |  **Applied To** |  **Action**  | **Advanced Setting** |  **Stats**|
   |--------- | --------| ----------- | --------------- | ------------- | ------------ | --------------- | ------------ | -------------------- | ----------|
 
@@ -803,7 +854,7 @@ policy configuration is shown in Table 5-6.
     Table 5‑5: Firewall Rule Table - Example 1
  </p>
 
-  
+
   |**Name**      |    **Source**  |   **Destination**|  **Service**               | **Action**  | **Applied To** |
   | -------------| -------------- | -----------------| -------------------------- | ------------| -------------- |
   |**Any to Web**|   Any          |  Group-WEB-IP    |  https                     |   Allow     |    All         |
@@ -826,13 +877,13 @@ This example uses the infrastructure methodology to define policy rule.
 Groups in this example are identified in Table 5-7 while the firewall
 policy configuration is shown in Table 5-8.
 
-  
+
   |**Group name**  | **Group definition**|
   |----------------|---------------------------|
   |Group-SEG-WEB   | Static inclusion: SEG-WEB |
   |Group-SEG-APP   | Static inclusion: SEG-APP |
   |Group-SEG-DB    | Static inclusion: SEG-DB  |
-  
+
 <p align="center">
 Table 5‑7: Firewall Rule Table - Example 2
 </p>
@@ -1410,7 +1461,7 @@ Here are the suggested steps:
   1.  Define NSX-T Groups for each of the Infrastructure Services.
     Following example shows the group for DNS and NTP servers with IP
     addresses of the respective servers as group members.
-    
+
 <p align="center">
     <img src="images/Figure5-20.png">
 </p>
@@ -1487,7 +1538,7 @@ Figure 5‑22: Policies Between Zones* *Example*
     others, there may be a compliance mandate to log every action.
     Logging requirements are driven by the balance between storage costs
     and compliance requirements.)
-    
+
 <p align="center">
     <img src="images/Figure5-23.png">
 </p>
