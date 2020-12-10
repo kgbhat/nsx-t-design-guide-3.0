@@ -2,8 +2,8 @@
 
 <!--ts-->
 # 5 NSX-T Security
-  Table of Contents
-  =================
+
+  **Table of Contents**
    * [5 NSX-T Security](#5-nsx-t-security)
       * [5.1 NSX-T Security Use Cases](#51-nsx-t-security-use-cases)
       * [5.2 NSX-T DFW Architecture and Components](#52-nsx-t-dfw-architecture-and-components)
@@ -53,7 +53,7 @@
 
 <!--te-->
 
-
+# 5 NSX-T Security
 
 In addition to providing network virtualization, NSX-T also serves as an
 advanced security platform, providing a rich set of features to
