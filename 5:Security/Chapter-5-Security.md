@@ -1737,8 +1737,9 @@ different security controls.
 
   **3- Non-NSX Managed workloads on traditional VLAN based network:**
     NSX Gateway Firewall can provide the Inter VLAN routing and
-    Firewalling. The Service Interface on NSX Gateway is used as a
-    gateway & firewall for all non-NSX managed VLAN workloads.
+    Firewalling. The Service Interface on NSX Tier-1 Gateway or External
+    Interface on Tier-0 Gateway is used as a gateway & firewall for all 
+    non-NSX managed VLAN workloads.
 
   **4- NSX managed Overlay workload bridged to Non-NSX managed VLAN:**
     This is the bridge scenario where an Overlay network is extended at
