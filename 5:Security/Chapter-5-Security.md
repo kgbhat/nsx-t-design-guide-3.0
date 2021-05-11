@@ -1731,17 +1731,17 @@ different security controls.
     NSX Distributed Firewall can be used to protect NSX managed VM's,
     Containers & Physical Server workloads.
 
-  **2- NSX Managed Workloads with NSX Overlay for networking:**
+  **2- Non-NSX Managed workloads on traditional VLAN based network:**
+     NSX Gateway Firewall can provide the Inter VLAN routing and
+    Firewalling. The Service Interface on NSX Tier-1 Gateway or External
+    Interface on Tier-0 Gateway is used as a gateway & firewall for all 
+    non-NSX managed VLAN workloads.
+      
+  **3- NSX Managed Workloads with NSX Overlay for networking:**
      a) NSX Distributed Firewall can be used to protect NSX managed VM's,
     Containers & Physical Server workloadds from east-west traffic perspective.
      b) NSX Gateway firewall can be used as inter-tenanat/zone
      firewall from north-south perspective, along with distributed firewall.
-
-  **3- Non-NSX Managed workloads on traditional VLAN based network:**
-    NSX Gateway Firewall can provide the Inter VLAN routing and
-    Firewalling. The Service Interface on NSX Tier-1 Gateway or External
-    Interface on Tier-0 Gateway is used as a gateway & firewall for all 
-    non-NSX managed VLAN workloads.
 
   **4- NSX managed Overlay workload bridged to Non-NSX managed VLAN:**
     This is the bridge scenario where an Overlay network is extended at
@@ -1754,4 +1754,51 @@ different security controls.
 </p>
 <p align="center">
 Figure 5‑28: NSX Firewall For all Deployment Scenario
+</p>
+
+
+### 5.13.1 Distributed Firewall for virtualized & physical server workloads
+
+ NSX distributed firewalling can be used for Network/Micro segmentation for NSX
+managed virtual or/and physical server. From implementation perspective NSX uses
+uses hypervisor kernel module on ESX for For vCenter virtualized workloads and NSX agents 
+on supported Windows and Linux OS physical servers.
+
+NSX firewall Deployment workflow:
+1-  Deploy NSX Manager,
+2A- Connect vCenter and Prepare vCenter ESX Cluster for NSX,
+2B- Install NSX agent on Physical Server, and
+3- Define Network/Micro segmentation policies.
+
+
+<p align="center">
+    <img src="images/Figure5-29.png">
+</p>
+<p align="center">
+Figure 5‑29: NSX Distributed Firewall for virtualized & physical server workloads
+</p>
+
+### 5.13.2 Gateway Firewall for virtualized & physical server workloads
+
+ NSX gateway firewalling can be used for Network segmentation for non-NSX
+managed virtual or/and physical server. 
+
+From implementation perspective NSX uses Service Interface on Tier-1 gateway 
+or External Interface on NSX Tier-0 Gateway as a L3 gateway/firewall interface
+for all VLAN workloads.
+
+NSX firewall Deployment workflow:
+1-  Deploy NSX Manager
+2- Provision Edge Cluster
+3- Create NSX Tier-0/1 Gateway
+4- Create Service Interface on Tier-1 or External Interface on Tier-0 with gateway IP per VLAN
+5- Define Zone/Inter-VLAN FW policies
+
+
+<p align="center">
+    <img src="images/Figure5-30.png">
+</p>
+<p align="center">
+Figure 5‑30: NSX Gateway Firewall for virtualized & physical server workloads
+
 </p>
